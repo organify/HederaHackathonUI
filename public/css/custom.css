@@ -1,0 +1,324 @@
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.input-wrapper-unique {
+    margin: 0 10px 10px;
+}
+
+input {
+    color: black;
+}
+
+/* front page import design */
+.front-page {
+    overflow-x: hidden;
+}
+
+.navbar .nav-link {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+.opacity {
+    opacity: 0.9;
+}
+
+.navbar .nav-item.active {
+    border-left: #444 3px solid;
+}
+
+.pic {
+    height: 250px;
+    width: 250px;
+}
+
+.carousel-caption {
+    color: ghostwhite;
+}
+
+.carousel-item {
+    height: 450px;
+}
+
+.carousel-image-1 {
+    background: url("../img/meat\ picture.jpg");
+    background-size: cover;
+}
+
+.carousel-image-2 {
+    background: url("../img/foods.jpg");
+    background-size: cover;
+}
+
+.carousel-image-3 {
+    background: url("../img/fruits\ picture.jpg");
+    background-size: cover;
+}
+
+.carousel-image-9 {
+    background: url("../img/cooking.jpg");
+    background-size: cover;
+    background-position-y: 70%;
+}
+
+#home-heading {
+    position: relative;
+    min-height: 200px;
+    background: url("../img/path.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #fff;
+}
+
+.inline {
+    display: inline-block;
+}
+
+#MAILMSG {
+    display: block;
+}
+
+#solution-heading {
+    position: relative;
+    min-height: 152px;
+    background: url("/img/organic\ kettle.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #fff;
+}
+
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#aboutus-header {
+    position: relative;
+    min-height: 150px;
+    background: url("../img/path.jpg");
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #fff;
+}
+
+#our-farmers {
+    position: relative;
+    min-height: 150px;
+    text-align: center;
+    color: black;
+}
+
+#video-play a {
+    color: #fff;
+}
+
+#laptop {
+    height: 200px;
+    width: 200px;
+}
+
+#ship {
+    height: 400px;
+    width: 400px;
+}
+
+#page-header {
+    height: 200px;
+
+    background-position: 0 -360px;
+
+    color: #fff;
+    border-bottom: 1px #eee solid;
+}
+
+#faq .card {
+    border: #444;
+}
+
+#faq a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#faq .card-body,
+#faq .card-header {
+    background: #333;
+}
+
+#main-footer {
+    background: #000;
+    color: #fff;
+}
+
+.card-body a {
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.probootstrap-animate {
+    margin: 0;
+}
+
+.product-header {
+    background: url("/img/cooking.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: 75%;
+}
+
+.cd-nugget-info a {
+    color: white;
+}
+
+.cd-nugget-info .cd-nugget-info-arrow {
+    fill: white;
+}
+
+.product-header h1 {
+    letter-spacing: 2px;
+}
+
+.col-md-6 .img-fluid {
+    width: 600px;
+    height: 600px;
+}
+
+.col-md-6 h1 {
+    text-align: center;
+}
+
+li {
+    border-right: #444 3px solid;
+}
+
+.farmer-login {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+li .form-wrapper div {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.container .navbar-brand {
+    text-transform: uppercase;
+    color: #57a757 !important;
+}
+
+.display-3 {
+    font-size: 2.5rem;
+}
+
+.product-page .carousel-caption {
+    bottom: 10vh;
+}
+
+.product-page .carousel-image-9 {
+    height: 70vh;
+}
+
+.poweredby {
+    font-size: 0.75rem;
+}
+
+.lead {
+    padding: 15px;
+}
+
+.lead {
+    font-size: 12.5px;
+}
+
+#getstarted {
+    font-size: 1rem;
+}
+
+
+
+@media (max-width: 350px) {
+    .carousel-caption h1 {
+        font-size: 1.75rem;
+    }
+
+    .col-md-12 {
+        padding: 0;
+    }
+
+    .card-body a {
+        font-size: 10px;
+    }
+
+    .col-md-6 a img {
+        width: 80vw;
+    }
+
+}
+
+@media (min-width: 575px) and (max-width: 768px) {
+    .navbar .nav-link {
+        font-size: 12px;
+        text-transform: uppercase;
+        /* padding: 10px !important; */
+    }
+
+    nav .container {
+        max-width: 100vw;
+    }
+}
+
+@media (min-width: 250px) and (max-width: 768px) {
+    .container .carousel-caption {
+        margin-bottom: 0 !important;
+        bottom: 5vh;
+        display: block !important;
+    }
+
+    .front-page .container .carousel-caption {
+        bottom: 15vh;
+    }
+
+    nav .container {
+        overflow: hidden;
+    }
+
+}
+
+@media (min-width: 250px) and (max-width: 1000px) {
+    .row {
+        max-width: 100vw;
+        margin: 0;
+    }
+
+    .row .col {
+        padding: 0;
+        max-width: 100vw;
+    }
+
+    #about .rounded-circle {
+        display: none !important;
+    }
+
+    .container .col-md-6 {
+        flex: none;
+        max-width: 100vw;
+    }
+}
+
+footer svg {
+    height: 10px;
+}
+
+footer a {
+    color: black;
+}

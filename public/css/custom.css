@@ -216,7 +216,7 @@ li .form-wrapper div {
 }
 
 .display-3 {
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .product-page .carousel-caption {
@@ -350,7 +350,7 @@ footer a {
     display: inline-block;
 }
 
-.totalHbarText2 {
+.userReward .totalHbarText2 {
     margin-top: 1rem;
 }
 
@@ -366,4 +366,34 @@ footer a {
     margin-top: 1rem;
     font-size: 12px;
     font-weight: bolder;
+}
+
+.text-before-remove {
+    font-size: 2rem;
+}
+
+.thankYou {
+    font-size: 2rem;
+}
+
+.getBalanceWrapper {
+    display: flex;
+    height: 20px;
+    align-items: center;
+}
+
+.userReward p {
+    font-size: 1.5rem;
+}
+
+.userReward {
+    padding-left: 15px;
+}
+
+.modal-body p {
+    font-size: 1.5rem;
+}
+
+.farmerQuote {
+    font-style: italic;
 }

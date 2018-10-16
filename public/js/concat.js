@@ -205,7 +205,7 @@ $(document).ready(function () {
     });
     $("body").on("click", ".submitTip", function () {
         var appendList3 =
-            '<p>Pasture to Plate has received your tip</p><br><p>Message from the farmer:</p><br><p>"I am very happy to be able to share my product information with you. Hope you love eaiting your food the same way we love preparing it for you!"</p>';
+            '<p>Pasture to Plate has received your tip</p><br><p>Message from the farmer:</p><br><p class="farmerQuote">"I am very happy to be able to share my product information with you. Hope you love eaiting your food the same way we love preparing it for you!"</p>';
         $(".newDiv").remove();
         $(".carousel-caption").append(appendList3);
     });

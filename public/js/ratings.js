@@ -10,24 +10,27 @@ $(document).ready(function () {
     $(".import-letters").append(randNumAppend);
 
 
-    function transfer(to, from, amount, callback){
-        var dataObj = {"data": {
-            "to": to,
-            "from": from,
-            "amount": amount
-        }};
-        var data = {dataString: JSON.stringify(dataObj)};
-        $.post("/transfer", data, function(response){
-            if(!response || response != "Success"){
+    function transfer(to, from, amount, callback) {
+        var dataObj = {
+            "data": {
+                "to": to,
+                "from": from,
+                "amount": amount
+            }
+        };
+        var data = {
+            dataString: JSON.stringify(dataObj)
+        };
+        $.post("/transfer", data, function (response) {
+            if (!response || response != "Success") {
                 $(".removeOnConfirm").remove();
                 $('.dynamicButton').remove();
                 $(".modal-body").append("<p>An error occurs during hbar transferring, please try again later</p>");
-            }
-            else {
+            } else {
                 callback(response);
             }
-                
-            });
+
+        });
     }
     // Validates person is not a robot
     $("#validateId").click(function () {
@@ -38,7 +41,7 @@ $(document).ready(function () {
         if (randNumAppend == innervalue) {
             var appendList =
                 '<div class="removeOnConfirm"> <h1 class="display-3">Reward your farmer</h1><p class="lead">Share your stars with the farmer and receive free HBars</p> <div id="rating"> <span class="star star1">☆</span> <span class="star star2">☆</span> <span class="star star3">☆</span> <span class="star star4">☆</span> <span class="star star5">☆</span> </div>' +
-                 '</div>';
+                '</div>';
             $(".removeOnConfirm").remove();
             $('.dynamicButton').html('<button type="button" class="btn btn-primary" id="submitReview">Submit review</button></div>');
             $(".modal-body").append(appendList);
@@ -48,33 +51,33 @@ $(document).ready(function () {
         }
     });
 
-   
-        $('body').on('click', '#submitReview', function () {
+
+    $('body').on('click', '#submitReview', function () {
         var HBarReceived = 5;
-        var callBack = function (response){
-                console.log(response);
+        var callBack = function (response) {
+            console.log(response);
             // alert(response);
             // var HBarTotal = JSON.stringify(response.toAccountTotal);
             // var test = JSON.parse(response);
             var HBarTotal = response;
             console.log(response);
             // var HBarTotal = '12312312';
-            var appendList2 = '<div class="newDiv"><p class="thankYou">Thank you for your review</><div class="userReward"><p>Your Reward: </p> <p class="totalHbarText">$<span>' + HBarReceived + 
-            '</span> Tiny Bars have been added to your account</p> <div class="getBalanceWrapper"><p class="totalHbarText2">Click to get your total balance: </p><button class="getBalance">get balance</button></div><p class="totalHbarText2">How much would you like to tip your farmer for?</p>' + 
-            '<input type="text" id="inputValue2"> (TinyBar)</div> </div>'
+            var appendList2 = '<div class="newDiv"><p class="thankYou">Thank you for your review</><div class="userReward"><p>Your Reward: </p> <p class="totalHbarText">$<span>' + HBarReceived +
+                '</span> Tiny Bars have been added to your account</p> <div class="getBalanceWrapper"><p class="totalHbarText2">Click to get your total balance: </p><button class="getBalance">get balance</button></div><p class="totalHbarText2">How much would you like to tip your farmer for?</p>' +
+                '<input type="text" id="inputValue2"> (TinyBar)</div> </div>'
             $('.removeOnConfirm').remove();
             $('.modal-body').append(appendList2);
             $('.dynamicButton').html('<button type="button" class="btn btn-primary" id="submitTip">Tip the farmer</button></div>');
 
         }
         transfer(accounts.userAccount, accounts.organifyAccount, HBarReceived, callBack);
-        
-    }) 
-    
+
+    })
+
     $("body").on("click", ".getBalance", function () {
-        $.get("/getBalance/"+ accounts.userAccount, function(response){
-             console.log(response);
-             if(!response || !response.success){
+        $.get("/getBalance/" + accounts.userAccount, function (response) {
+            console.log(response);
+            if (!response || !response.success) {
                 $(".getBalanceWrapper").remove();
                 $(".totalHbarText").append('<p>An error occurs when retrieving account balance. Please try again later');
                 return;
@@ -91,14 +94,14 @@ $(document).ready(function () {
     });
     $("body").on("click", "#submitTip", function () {
         var innervalue = document.getElementById("inputValue2").value;
-        var callBack = function(response){
+        var callBack = function (response) {
             var appendList3 =
-            '<p>Pasture to Plate has received your '+ innervalue +' TinyBar tip</p><br><p>Message from the farmer:</p><br><p>"I am very happy to be able to share my product information with you. Hope you love eaiting your food the same way we love preparing it for you!"</p>';
-        $(".newDiv").remove();
-        $(".modal-body").append(appendList3);
-         $('.dynamicButton').remove();
+                '<p>Pasture to Plate has received your ' + innervalue + ' TinyBar tip</p><br><p>Message from the farmer:</p><br><p class="farmerQuote">"I am very happy to be able to share my product information with you. Hope you love eaiting your food the same way we love preparing it for you!"</p>';
+            $(".newDiv").remove();
+            $(".modal-body").append(appendList3);
+            $('.dynamicButton').remove();
         }
-         transfer(accounts.farmerAccount, accounts.userAccount, innervalue, callBack);
+        transfer(accounts.farmerAccount, accounts.userAccount, innervalue, callBack);
     });
 });
 /**

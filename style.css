@@ -8004,18 +8004,41 @@ input.input100 {
   right: 0px;
   bottom: 0px; }
 
-.rating > span:hover:before {
-  content: "\2605";
-  position: absolute; }
+html {
+  background: #333;
+  background: radial-gradient(#333, #000);
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
 
-.rating {
-  direction: rtl;
-  font-size: 20px; }
+#rating {
+  text-align: center;
+  -webkit-perspective: 250px;
+          perspective: 250px;
+  position: absolute;
+  top: 40%;
+  width: 100%; }
 
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-  content: "\2605";
-  position: absolute; }
+#rating span {
+  cursor: pointer;
+  font-size: 20px;
+  padding: 0 10px;
+  color: black;
+  opacity: 0.5;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+  display: inline-block;
+  -webkit-transform: rotateX(45deg);
+          transform: rotateX(45deg);
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom; }
+
+#rating span:hover {
+  color: #ff0;
+  opacity: 1;
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+  text-shadow: 0 0 30px #ffc; }
 
 .review #showcase {
   height: 100vh;
@@ -8049,7 +8072,8 @@ input.input100 {
               margin: 5vh;
               height: 5vh;
               width: 10vw;
-              text-align: center; }
+              text-align: center;
+              font-size: 15px; }
             .review #showcase #myCarousel .carousel-inner .carousel-item .wrapper .carousel-caption #inputValue2 {
               background-color: lightgrey;
               margin: 2vh;

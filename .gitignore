@@ -1,2 +1,4 @@
 gulp.js
 node_modules
+.gitignore
+app/controllers/pagesController.js

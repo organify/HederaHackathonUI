@@ -321,13 +321,49 @@ footer svg {
 footer a {
     color: black;
 }
+
 .star {
     font-size: 3em;
     color: grey;
+    cursor: pointer !important;
+
 }
+
 .selected-star {
-    color: darkgreen!important;
+    color: darkgreen !important;
     font-weight: 1000;
     transform: rotateX(0deg);
     text-shadow: 0 0 30px #ffc;
+}
+
+.totalRating {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
+.totalRating span {
+    font-size: 20px;
+    padding: 0 10px;
+    color: darkgreen;
+    display: inline-block;
+}
+
+.totalHbarText2 {
+    margin-top: 1rem;
+}
+
+.letters-background {
+    background: repeating-linear-gradient(45deg,
+        black, #35363d 10px);
+    width: 60px;
+    text-align: center;
+}
+
+.import-letters {
+    color: white;
+    margin-top: 1rem;
+    font-size: 12px;
+    font-weight: bolder;
 }

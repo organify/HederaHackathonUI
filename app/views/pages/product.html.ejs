@@ -59,142 +59,151 @@
 						<div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
 							<h1 class="display-3">Pasture to Plate</h1>
 							<h1 class="poweredby">Powered by Organify</h1>
-							<p class="lead">Pasture to Plate cattle are 100% grassfed. Depending on the season they are eating fresh grass off the pasture, hay,
+							<div class="totalRating"> <span>☆</span> <span>☆</span> <span>☆</span>
+								<span>☆</span> <span>☆</span> </div>
+							<p>5 STARS</p>
+							<p class="lead">Pasture to Plate cattle are 100% grassfed. Depending on the season they are eating fresh grass
+								off the pasture, hay,
 								winter grazing through the snow or being supplemented with fodder (sprouts).</p>
-							<a data-toggle="modal" data-target="#ratingModal"><input id="getstarted" type="button" value="Rate this farmer" class="btn btn-danger btn-lg"></a>
+							<a data-toggle="modal" data-target="#ratingModal"><input id="getstarted" type="button" value="Rate this farmer"
+								 class="btn btn-danger btn-lg"></a>
 						</div>
 					</div>
 				</div>
 			</div>
 	</section>
 	<div class="modal fade" id="ratingModal" tabindex="-1" role="dialog" aria-labelledby="ratingModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Sweet, you are earning Hbars</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="removeOnConfirm">
-                                <h1 class='text-before-remove'>Please copy the numbers you see in the right order to the box to be validated</h1>
-                                <p class="import-letters"></p>
-                                <input type='text' id='inputValue'>
-                            </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-		<div class="dynamicButton"><button type="button" class="btn btn-primary" id="validateId">Validate account</button></div>
-      </div>
-    </div>
-  </div>
-</div>
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Sweet, you are earning Hbars</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="removeOnConfirm">
+						<h1 class='text-before-remove'>Please copy the numbers you see in the right order to the box to be validated</h1>
+						<div class="letters-background">
+							<p class="import-letters"></p>
+						</div>
+						<input type='text' id='inputValue'>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+					<div class="dynamicButton"><button type="button" class="btn btn-primary" id="validateId">Validate account</button></div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- success message -->
 	<div class="container" id='success-message-container' style="padding-top:30px"></div>
 	<% if(errorOccur){ %>
-		<div class="container">
-			<div class="alert alert-danger" role="alert">
+	<div class="container">
+		<div class="alert alert-danger" role="alert">
 			<h5>This item has been archived, it's no longer available for public view</h5>
 		</div>
-		</div>
-			<% }else{ %>
-			<section class="cd-timeline js-cd-timeline">
-				<div class="cd-timeline__container">
-					<% txDataList.forEach(function(item, index){ if(item.event && item.event.title){%>
-						<div class="cd-timeline__block js-cd-block">
+	</div>
+	<% }else{ %>
+	<section class="cd-timeline js-cd-timeline">
+		<div class="cd-timeline__container">
+			<% txDataList.forEach(function(item, index){ if(item.event && item.event.title){%>
+			<div class="cd-timeline__block js-cd-block">
 
-							<% if(index <= 3){ %>
-								<div class="cd-timeline__img cd-timeline__img--beef js-cd-img">
-									<img src="/img/meat.svg" alt="Beef">
-								</div>
-								<% }else if(index > 3 && index <= 7){ %>
-									<div class="cd-timeline__img cd-timeline__img--cow js-cd-img">
-										<img src="/img/beef1.svg" alt="Cow">
-									</div>
-									<% }else if(index > 7 && index <= 9){ %>
-										<div class="cd-timeline__img cd-timeline__img--calf js-cd-img">
-											<img src="/img/cow.svg" alt="Calf">
-										</div>
-										<% }else if(index == 10){ %>
-											<div class="cd-timeline__img cd-timeline__img--range js-cd-img">
-												<img src="/img/farmer.svg" alt="Range">
-											</div>
-											<% } %>
-												<!-- cd-timeline__img -->
+				<% if(index <= 3){ %>
+				<div class="cd-timeline__img cd-timeline__img--beef js-cd-img">
+					<img src="/img/meat.svg" alt="Beef">
+				</div>
+				<% }else if(index > 3 && index <= 7){ %>
+				<div class="cd-timeline__img cd-timeline__img--cow js-cd-img">
+					<img src="/img/beef1.svg" alt="Cow">
+				</div>
+				<% }else if(index > 7 && index <= 9){ %>
+				<div class="cd-timeline__img cd-timeline__img--calf js-cd-img">
+					<img src="/img/cow.svg" alt="Calf">
+				</div>
+				<% }else if(index == 10){ %>
+				<div class="cd-timeline__img cd-timeline__img--range js-cd-img">
+					<img src="/img/farmer.svg" alt="Range">
+				</div>
+				<% } %>
+				<!-- cd-timeline__img -->
 
-												<div class="cd-timeline__content js-cd-content">
-													<h2>
-														<%= item.event.title %>
-													</h2>
-													<p><b>Location: </b>
-														<%= item.event.location %>
-													</p>
-													<p class="clampedLine"><b>Description: </b>
-														<%= item.event.description %> <br>
-															<small style="font-style: italic;">Disclaimer: This food tracking system is brought to you by <a href="/" class="disclaimer">Organify.io</a>.</small>
-													</p>
-													<a href="#0" class="cd-timeline__read-more info readMore" data-organify-id="<%= item.event.title %>">Read More</a>
+				<div class="cd-timeline__content js-cd-content">
+					<h2>
+						<%= item.event.title %>
+					</h2>
+					<p><b>Location: </b>
+						<%= item.event.location %>
+					</p>
+					<p class="clampedLine"><b>Description: </b>
+						<%= item.event.description %> <br>
+						<small style="font-style: italic;">Disclaimer: This food tracking system is brought to you by <a href="/" class="disclaimer">Organify.io</a>.</small>
+					</p>
+					<a href="#0" class="cd-timeline__read-more info readMore" data-organify-id="<%= item.event.title %>">Read More</a>
 
-													<span class="cd-timeline__date">
+					<span class="cd-timeline__date">
 						<%= item.event.date %></span>
-												</div>
-												<!-- cd-timeline__content -->
-						</div>
-						<!-- cd-timeline__block -->
-						<% }}) %>
 				</div>
-			</section>
-			<% } %>
-			<footer class="footer">
-				<div class="container">
-					<p>Disclaimer: This information is brought to you by Organify.io.
-						<a href="/" class="disclaimer">Click here</a> to know how we use technology to build trust in food industry</p>
-				</div>
-			</footer>
-			<!-- cd-timeline -->
-			<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-			 crossorigin="anonymous"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-			 crossorigin="anonymous"></script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-			 crossorigin="anonymous"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+				<!-- cd-timeline__content -->
+			</div>
+			<!-- cd-timeline__block -->
+			<% }}) %>
+		</div>
+	</section>
+	<% } %>
+	<footer class="footer">
+		<div class="container">
+			<p>Disclaimer: This information is brought to you by Organify.io.
+				<a href="/" class="disclaimer">Click here</a> to know how we use technology to build trust in food industry</p>
+		</div>
+	</footer>
+	<!-- cd-timeline -->
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 
-			<script src="/js/main.js"></script>
-			<script src="/js/session.js"></script>
-			<script src="/js/clamp.min.js"></script>
-			<script src="/js/ratings.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="/js/session.js"></script>
+	<script src="/js/clamp.min.js"></script>
+	<script src="/js/ratings.js"></script>
 
-			<!-- Resource JavaScript -->
-			<!-- start bot code -->
-			
-			<script>
-				$(function () {
-					var url = window.location.pathname;
-					var urlItems = url.split('/');
-					var ownerPublicKey = urlItems[urlItems.length - 2];
-					var id = urlItems[urlItems.length - 1];
+	<!-- Resource JavaScript -->
+	<!-- start bot code -->
 
-					function init() {
-						$clamp(document.querySelector('.clampedLine'), { clamp: 1 });
-						$('.readMore').click(function (e) {
-							var target = $(e.target);
-							target.css({
-								'display': 'none',
-							})
-							var targetData = target.siblings('.clampedLine');
-							targetData.attr('style', null);
-							var eventName = "readMore_" + target.attr("data-organify-id");
-							
-						})
-						$(".disclaimer").on("click", function (e) {
-							
-						});
-						$(".homePage").on("click", function (e) {
-							
-						});
-						/*$('#confirm').click(function (e) {
+	<script>
+		$(function () {
+			var url = window.location.pathname;
+			var urlItems = url.split('/');
+			var ownerPublicKey = urlItems[urlItems.length - 2];
+			var id = urlItems[urlItems.length - 1];
+
+			function init() {
+				$clamp(document.querySelector('.clampedLine'), {
+					clamp: 1
+				});
+				$('.readMore').click(function (e) {
+					var target = $(e.target);
+					target.css({
+						'display': 'none',
+					})
+					var targetData = target.siblings('.clampedLine');
+					targetData.attr('style', null);
+					var eventName = "readMore_" + target.attr("data-organify-id");
+
+				})
+				$(".disclaimer").on("click", function (e) {
+
+				});
+				$(".homePage").on("click", function (e) {
+
+				});
+				/*$('#confirm').click(function (e) {
 						event.preventDefault();
 						var data = {
 							title: "Arrival confirmed",
@@ -226,77 +235,77 @@
 							});
 		
 					});*/
-					}
+			}
 
-					function getDate() {
-						var today = new Date();
-						var dd = today.getDate();
-						var mm = today.getMonth() + 1; //January is 0!
+			function getDate() {
+				var today = new Date();
+				var dd = today.getDate();
+				var mm = today.getMonth() + 1; //January is 0!
 
-						var yyyy = today.getFullYear();
-						if (dd < 10) {
-							dd = '0' + dd;
-						}
-						if (mm < 10) {
-							mm = '0' + mm;
-						}
-						return mm + '/' + dd + '/' + yyyy;
-					}
+				var yyyy = today.getFullYear();
+				if (dd < 10) {
+					dd = '0' + dd;
+				}
+				if (mm < 10) {
+					mm = '0' + mm;
+				}
+				return mm + '/' + dd + '/' + yyyy;
+			}
 
-					function addSuccessMessage(txHash) {
-						var div = document.createElement('div');
-						div.setAttribute('class', 'class alert alert-warning alert-dismissable');
-						div.setAttribute('role', 'alert');
-						div.setAttribute('id', txHash);
-						div.innerHTML =
-							`<div class="infoMsg" id="infoMsg">
+			function addSuccessMessage(txHash) {
+				var div = document.createElement('div');
+				div.setAttribute('class', 'class alert alert-warning alert-dismissable');
+				div.setAttribute('role', 'alert');
+				div.setAttribute('id', txHash);
+				div.innerHTML =
+					`<div class="infoMsg" id="infoMsg">
   					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
   					Your request has been submitted. Please wait for confirmation.
 					</div>`;
-						document.getElementById('success-message-container').appendChild(div);
-					}
+				document.getElementById('success-message-container').appendChild(div);
+			}
 
-					function updateSuccessMessage(txHash, status) {
-						var successMessageText = $("#infoMsg");
-						successMessageText.removeClass('infoMsg');
+			function updateSuccessMessage(txHash, status) {
+				var successMessageText = $("#infoMsg");
+				successMessageText.removeClass('infoMsg');
 
-						if (status == 1) {
-							successMessageText.addClass('successMsg');
-							successMessageText.html(
-								`<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+				if (status == 1) {
+					successMessageText.addClass('successMsg');
+					successMessageText.html(
+						`<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
   					Your request has been mined and updated successfully. Please reload to ses changes`
-							);
-						} else if (status == 0) {
-							successMessageText.addClass('dangerMsg');
-							successMessageText.html(
-								`<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+					);
+				} else if (status == 0) {
+					successMessageText.addClass('dangerMsg');
+					successMessageText.html(
+						`<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
   					Your request has failed. Please try again later`
-							);
+					);
+				}
+			}
+
+			function waitForReceipt(hash, cb) {
+				web3.eth.getTransactionReceipt(hash, function (err, receipt) {
+					if (err) {
+						return;
+					}
+
+					if (receipt && receipt.status) {
+						// Transaction went through
+						if (cb) {
+							cb(receipt);
 						}
+					} else {
+						// Try again in 1 second
+						window.setTimeout(function () {
+							waitForReceipt(hash, cb);
+						}, 1000);
 					}
-
-					function waitForReceipt(hash, cb) {
-						web3.eth.getTransactionReceipt(hash, function (err, receipt) {
-							if (err) {
-								return;
-							}
-
-							if (receipt && receipt.status) {
-								// Transaction went through
-								if (cb) {
-									cb(receipt);
-								}
-							} else {
-								// Try again in 1 second
-								window.setTimeout(function () {
-									waitForReceipt(hash, cb);
-								}, 1000);
-							}
-						});
-					}
-					init();
-				})
-			</script>
+				});
+			}
+			init();
+		})
+	</script>
 </body>
 
 </html>

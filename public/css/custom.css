@@ -321,3 +321,13 @@ footer svg {
 footer a {
     color: black;
 }
+.star {
+    font-size: 3em;
+    color: grey;
+}
+.selected-star {
+    color: darkgreen!important;
+    font-weight: 1000;
+    transform: rotateX(0deg);
+    text-shadow: 0 0 30px #ffc;
+}

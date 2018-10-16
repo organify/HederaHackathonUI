@@ -14,6 +14,7 @@ module.exports = function routes() {
   this.match('myItems', 'pages#myItems');
   this.match('admin', 'pages#admin');
   this.match('frontPage', 'pages#frontPage');
+  this.match('getBalance/:accountId', 'pages#getBalance');
   this.post('signIn', 'pages#signIn');
   this.post('transfer', 'pages#transfer');
   this.post('signOut', 'pages#signOut');

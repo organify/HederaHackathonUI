@@ -39,10 +39,56 @@ pagesController.transfer = function(data) {
 
 post_req.on('error', function(e) {
     console.log('problem with request: ' + e.message);
+    currentResponse.end("Exception when initiate transfer request");
 });
 
 post_req.write(post_data);
 post_req.end();
+}
+
+pagesController.getBalance = function() {
+  // Build the post string from an object
+  var accountId = this.param("accountId");
+  console.log("AccountId = " + accountId);
+  var currentResponse = this.res;
+
+  // An object of options to indicate where to post to
+  var get_options = {
+      //host: 'http://localhost',
+      port: '8080',
+      path: '/api/getBalance?accountId=' + accountId,
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json'
+          //'Content-Length': Buffer.byteLength(post_data)
+      }
+  };
+
+  var get_req = http.request(get_options, function (res) {
+    console.log('STATUS: ' + res.statusCode);
+    console.log('HEADERS: ' + JSON.stringify(res.headers));
+    res.setEncoding('utf8');
+    res.on('data', function (chunk) {
+        console.log('Response: ', chunk);
+        try{
+          var response = JSON.parse(chunk);
+          var balance = response && response.accountBalance > 0?response.accountBalance: -1;
+          console.log('Response balance: ', response.accountBalance);
+          currentResponse.send({"success": response && response.accountBalance > 0, "balance": balance});
+        }
+        catch(e){
+          console.log(e);
+          currentResponse.send({"success": false});
+        }
+    });
+});
+
+get_req.on('error', function(e) {
+    console.log('problem with request: ' + e.message);
+    currentResponse.end("Exception when initiate get balance request");
+});
+
+get_req.end();
 }
 
 function wait(ms) {

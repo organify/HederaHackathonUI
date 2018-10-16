@@ -24,6 +24,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Just+Another+Hand|Open+Sans:300,400" rel="stylesheet">
 	<link rel="stylesheet" href="/css/custom.css">
 	<link rel="stylesheet" href="/css/style2.min.css">
+
 </head>
 
 <body>
@@ -56,19 +57,39 @@
 				<div class="carousel-item carousel-image-9 active">
 					<div class="container">
 						<div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
-							<div class="removeOnConfirm">
-                                <h1 class='text-before-remove'>Please copy the numbers you see in the right order to the box to be validated</h1>
-                                <p class="import-letters"></p>
-                                <input type='text' id='inputValue'>
-                                <br>
-                                <button class="button">Validade</button>
-                            </div>
+							<h1 class="display-3">Pasture to Plate</h1>
+							<h1 class="poweredby">Powered by Organify</h1>
+							<p class="lead">Pasture to Plate cattle are 100% grassfed. Depending on the season they are eating fresh grass off the pasture, hay,
+								winter grazing through the snow or being supplemented with fodder (sprouts).</p>
+							<a data-toggle="modal" data-target="#ratingModal"><input id="getstarted" type="button" value="Rate this farmer" class="btn btn-danger btn-lg"></a>
 						</div>
 					</div>
 				</div>
 			</div>
 	</section>
-
+	<div class="modal fade" id="ratingModal" tabindex="-1" role="dialog" aria-labelledby="ratingModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sweet, you are earning Hbars</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="removeOnConfirm">
+                                <h1 class='text-before-remove'>Please copy the numbers you see in the right order to the box to be validated</h1>
+                                <p class="import-letters"></p>
+                                <input type='text' id='inputValue'>
+                            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+		<div class="dynamicButton"><button type="button" class="btn btn-primary" id="validateId">Validate account</button></div>
+      </div>
+    </div>
+  </div>
+</div>
 	<!-- success message -->
 	<div class="container" id='success-message-container' style="padding-top:30px"></div>
 	<% if(errorOccur){ %>

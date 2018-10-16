@@ -8034,7 +8034,7 @@ html {
           transform-origin: center bottom; }
 
 #rating span:hover {
-  color: #ff0;
+  color: darkgoldenrod;
   opacity: 1;
   -webkit-transform: rotateX(0deg);
           transform: rotateX(0deg);

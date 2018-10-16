@@ -22,7 +22,7 @@ $(document).ready(function () {
 
     $("body").on("click", ".star1", function () {
             $(".star1").css({
-                'color': '#ff0',
+                'color': 'darkred',
                 'opacity': '1',
                 'transform': 'rotateX(0deg)',
                 'text-shadow': '0 0 30px #ffc'
@@ -30,13 +30,13 @@ $(document).ready(function () {
         }),
         $("body").on("click", ".star2", function () {
             $(".star1").css({
-                'color': '#ff0',
+                'color': 'darkred',
                 'opacity': '1',
                 'transform': 'rotateX(0deg)',
                 'text-shadow': '0 0 30px #ffc'
             });
             $(".star2").css({
-                'color': '#ff0',
+                'color': 'darkred',
                 'opacity': '1',
                 'transform': 'rotateX(0deg)',
                 'text-shadow': '0 0 30px #ffc'
@@ -44,19 +44,19 @@ $(document).ready(function () {
         }),
         $("body").on("click", ".star3", function () {
             $(".star1").css({
-                'color': '#ff0',
+                'color': 'darkred',
                 'opacity': '1',
                 'transform': 'rotateX(0deg)',
                 'text-shadow': '0 0 30px #ffc'
             });
             $(".star2").css({
-                'color': '#ff0',
+                'color': 'darkred',
                 'opacity': '1',
                 'transform': 'rotateX(0deg)',
                 'text-shadow': '0 0 30px #ffc'
             });
             $(".star3").css({
-                'color': '#ff0',
+                'color': 'darkred',
                 'opacity': '1',
                 'transform': 'rotateX(0deg)',
                 'text-shadow': '0 0 30px #ffc'
@@ -64,25 +64,25 @@ $(document).ready(function () {
         }),
         $("body").on("click", ".star4", function () {
             $(".star1").css({
-                'color': '#ff0',
+                'color': 'darkred',
                 'opacity': '1',
                 'transform': 'rotateX(0deg)',
                 'text-shadow': '0 0 30px #ffc'
             });
             $(".star2").css({
-                'color': '#ff0',
+                'color': 'darkred',
                 'opacity': '1',
                 'transform': 'rotateX(0deg)',
                 'text-shadow': '0 0 30px #ffc'
             });
             $(".star3").css({
-                'color': '#ff0',
+                'color': 'darkred',
                 'opacity': '1',
                 'transform': 'rotateX(0deg)',
                 'text-shadow': '0 0 30px #ffc'
             });
             $(".star4").css({
-                'color': '#ff0',
+                'color': 'darkred',
                 'opacity': '1',
                 'transform': 'rotateX(0deg)',
                 'text-shadow': '0 0 30px #ffc'
@@ -90,31 +90,31 @@ $(document).ready(function () {
         }),
         $("body").on("click", ".star5", function () {
             $(".star1").css({
-                'color': '#ff0',
+                'color': 'darkred',
                 'opacity': '1',
                 'transform': 'rotateX(0deg)',
                 'text-shadow': '0 0 30px #ffc'
             });
             $(".star2").css({
-                'color': '#ff0',
+                'color': 'darkred',
                 'opacity': '1',
                 'transform': 'rotateX(0deg)',
                 'text-shadow': '0 0 30px #ffc'
             });
             $(".star3").css({
-                'color': '#ff0',
+                'color': 'darkred',
                 'opacity': '1',
                 'transform': 'rotateX(0deg)',
                 'text-shadow': '0 0 30px #ffc'
             });
             $(".star4").css({
-                'color': '#ff0',
+                'color': 'darkred',
                 'opacity': '1',
                 'transform': 'rotateX(0deg)',
                 'text-shadow': '0 0 30px #ffc'
             });
             $(".star5").css({
-                'color': '#ff0',
+                'color': 'darkred',
                 'opacity': '1',
                 'transform': 'rotateX(0deg)',
                 'text-shadow': '0 0 30px #ffc'

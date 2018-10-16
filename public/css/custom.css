@@ -62,7 +62,6 @@ input {
 .carousel-image-9 {
     background: url("../img/cooking.jpg");
     background-size: cover;
-    background-position-y: 70%;
 }
 
 #home-heading {

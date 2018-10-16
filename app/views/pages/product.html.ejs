@@ -14,8 +14,6 @@
 	<link rel="stylesheet" href="/css/reset.css">
 	<!-- CSS reset -->
 	<link rel="stylesheet" href="/css/style.css">
-	<!-- Resource style -->
-	<link rel="stylesheet" href="/css/demo.css">
 	<!-- Demo style -->
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
@@ -58,11 +56,13 @@
 				<div class="carousel-item carousel-image-9 active">
 					<div class="container">
 						<div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
-							<h1 class="display-3">Pasture to Plate</h1>
-							<h1 class="poweredby">Powered by Organify</h1>
-							<p class="lead">Pasture to Plate cattle are 100% grassfed. Depending on the season they are eating fresh grass off the pasture, hay,
-								winter grazing through the snow or being supplemented with fodder (sprouts).</p>
-							<a href="http://www.pasturetoplate.ca/" target="_blank"><input id="getstarted" type="button" value="Find Out More" class="btn btn-danger btn-lg"></a>
+							<div class="removeOnConfirm">
+                                <h1 class='text-before-remove'>Please copy the numbers you see in the right order to the box to be validated</h1>
+                                <p class="import-letters"></p>
+                                <input type='text' id='inputValue'>
+                                <br>
+                                <button class="button">Validade</button>
+                            </div>
 						</div>
 					</div>
 				</div>
@@ -143,20 +143,12 @@
 			<script src="/js/main.js"></script>
 			<script src="/js/session.js"></script>
 			<script src="/js/clamp.min.js"></script>
-			<script src="/js/analytics.min.js"></script>
+			<script src="/js/ratings.js"></script>
+
 			<!-- Resource JavaScript -->
 			<!-- start bot code -->
-			<script src="https://lex-web-ui-codebuilddeploy-1k0pscycy-webappbucket-1xrglq0ah1l6t.s3.amazonaws.com/lex-web-ui-loader.min.js"></script>
+			
 			<script>
-				var loaderOpts = {
-					baseUrl: 'https://lex-web-ui-codebuilddeploy-1k0pscycy-webappbucket-1xrglq0ah1l6t.s3.amazonaws.com/'
-				};
-				var loader = new ChatBotUiLoader.IframeLoader(loaderOpts);
-				loader.load()
-					.catch(function (error) { console.error(error); });
-			</script>
-			<script>
-				mixpanel.track("productPageView");
 				$(function () {
 					var url = window.location.pathname;
 					var urlItems = url.split('/');
@@ -173,13 +165,13 @@
 							var targetData = target.siblings('.clampedLine');
 							targetData.attr('style', null);
 							var eventName = "readMore_" + target.attr("data-organify-id");
-							mixpanel.track(eventName);
+							
 						})
 						$(".disclaimer").on("click", function (e) {
-							mixpanel.track("disclaimerEvent");
+							
 						});
 						$(".homePage").on("click", function (e) {
-							mixpanel.track("homePageFromProductPage");
+							
 						});
 						/*$('#confirm').click(function (e) {
 						event.preventDefault();

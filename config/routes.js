@@ -15,6 +15,7 @@ module.exports = function routes() {
   this.match('admin', 'pages#admin');
   this.match('frontPage', 'pages#frontPage');
   this.post('signIn', 'pages#signIn');
+  this.post('transfer', 'pages#transfer');
   this.post('signOut', 'pages#signOut');
   this.post('form/submitItem', 'pages#submitItem');
   this.post('form/submitConfirm', 'pages#submitConfirm');

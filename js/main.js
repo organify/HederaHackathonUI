@@ -70,7 +70,7 @@ $(document).ready(function () {
             "processData": false,
             "data": "{\"data\": {\"accountId\": 123}}"
         }
-
+        
         $.ajax(settings).done(function (response) {
             console.log(response);
             // var test = JSON.parse(response);

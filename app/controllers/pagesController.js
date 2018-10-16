@@ -3,13 +3,47 @@ var locomotive = require('locomotive'),
   Controller = locomotive.Controller;
 var ethereumService = require('../services/ethereumService.js')
 var sessionService = require('../services/sessionService.js')
-
+var http = require('http');
 var pagesController = new Controller();
 var userSession = {};
 var allProducts = [];
 var publicKeys = ["0x8929d658b2647f09a318ebd756f49f299f82c7d9"];
 
+pagesController.transfer = function(data) {
+  // Build the post string from an object
+  var data = this.req.body;
+  var currentResponse = this.res;
+  var post_data = data.dataString;
 
+  // An object of options to indicate where to post to
+  var post_options = {
+      //host: 'http://localhost',
+      port: '8080',
+      path: '/api/transfer',
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+          //'Content-Length': Buffer.byteLength(post_data)
+      }
+  };
+
+  var post_req = http.request(post_options, function (res) {
+    console.log('STATUS: ' + res.statusCode);
+    console.log('HEADERS: ' + JSON.stringify(res.headers));
+    res.setEncoding('utf8');
+    res.on('data', function (chunk) {
+        console.log('Response: ', chunk);
+        currentResponse.end(chunk);
+    });
+});
+
+post_req.on('error', function(e) {
+    console.log('problem with request: ' + e.message);
+});
+
+post_req.write(post_data);
+post_req.end();
+}
 
 function wait(ms) {
   var start = new Date().getTime();

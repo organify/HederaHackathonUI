@@ -1,142 +1,142 @@
 .review {
-    #showcase {
-        height: 100vh;
-        margin: 0 !important;
-        margin-top: 0 !important;
+  #showcase {
+    height: 100vh;
+    margin: 0 !important;
+    margin-top: 0 !important;
 
-        #myCarousel {
+    #myCarousel {
+      height: 100%;
+
+      .carousel-inner {
+        height: 100%;
+
+        .carousel-item {
+          height: 100%;
+
+          .wrapper {
             height: 100%;
 
-            .carousel-inner {
-                height: 100%;
+            .carousel-caption {
+              min-height: 310px;
+              height: 60vh;
 
-                .carousel-item {
-                    height: 100%;
+              .submitReview {
+                background-color: lightgreen;
+                height: 10vh;
+                width: 10vw;
 
-                    .wrapper {
-                        height: 100%;
-
-                        .carousel-caption {
-                            min-height: 310px;
-                            height: 60vh;
-
-                            .submitReview {
-                                background-color: lightgreen;
-                                height: 10vh;
-                                width: 10vw;
-
-                                &:hover {
-                                    background-color: rgb(104, 228, 104);
-                                }
-                            }
-
-                            .button {
-                                background-color: lightgreen;
-                                height: 10vh;
-                                width: 10vw;
-
-                                &:hover {
-                                    background-color: rgb(104, 228, 104);
-                                }
-                            }
-
-                            #inputValue {
-                                background-color: lightgrey;
-                                margin: 5vh;
-                                height: 5vh;
-                                width: 10vw;
-                                text-align: center;
-                            }
-
-                            #inputValue2 {
-                                background-color: lightgrey;
-                                margin: 2vh;
-                                height: 5vh;
-                                width: 10vw;
-                                text-align: center;
-                            }
-
-                            .import-letters {
-                                margin: 5vh 5vh 0 5vh;
-                                height: 5vh;
-                                color: black;
-                                font-size: 20px;
-                                -webkit-user-select: none;
-                                -khtml-user-select: none;
-                                -moz-user-select: none;
-                                -ms-user-select: none;
-                                -o-user-select: none;
-                                user-select: none;
-                            }
-
-                            .text-before-remove {
-                                margin: 7vh 5vh 0 5vh;
-                            }
-
-                            .display-3 {
-                                margin-top: 7vh;
-                            }
-                        }
-
-                        p {
-                            margin: 3vh 0;
-                            font-size: 20px;
-                        }
-
-                        .newDiv {
-                            display: grid !important;
-                            grid-template-columns: 1fr 1fr;
-                            grid-template-rows: 0.2fr 3fr;
-
-                            .thankYou {
-                                grid-column-start: 1;
-                                grid-column-end: 3;
-                            }
-
-                            .userReward {
-                                grid-row-start: 2;
-                                grid-column-start: 1;
-                                grid-column-end: 3;
-
-                                .totalHbarText {
-                                    font-size: 15px;
-                                    margin: 0;
-                                }
-
-                                .totalHbarText2 {
-                                    font-size: 15px;
-                                    margin: 0;
-                                }
-                            }
-                        }
-
-                        .submitTip {
-
-                            background-color: lightgreen;
-                            height: 8vh;
-                            width: 8vw;
-
-                            &:hover {
-                                background-color: rgb(104, 228, 104);
-                            }
-                        }
-
-                        .tipOption {
-                            margin: 2vh;
-                        }
-
-                        .getBalance {
-                            background-color: lightgreen;
-                            height: 4vh;
-                            width: 10vw;
-
-                            &:hover {
-                                background-color: rgb(104, 228, 104);
-                            }
-                        }
-                    }
+                &:hover {
+                  background-color: rgb(104, 228, 104);
                 }
+              }
+
+              .button {
+                background-color: lightgreen;
+                height: 10vh;
+                width: 10vw;
+
+                &:hover {
+                  background-color: rgb(104, 228, 104);
+                }
+              }
+
+              #inputValue {
+                background-color: lightgrey;
+                margin: 5vh;
+                height: 5vh;
+                width: 10vw;
+                text-align: center;
+                font-size: 15px;
+              }
+
+              #inputValue2 {
+                background-color: lightgrey;
+                margin: 2vh;
+                height: 5vh;
+                width: 10vw;
+                text-align: center;
+              }
+
+              .import-letters {
+                margin: 5vh 5vh 0 5vh;
+                height: 5vh;
+                color: black;
+                font-size: 20px;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                -o-user-select: none;
+                user-select: none;
+              }
+
+              .text-before-remove {
+                margin: 7vh 5vh 0 5vh;
+              }
+
+              .display-3 {
+                margin-top: 7vh;
+              }
             }
+
+            p {
+              margin: 3vh 0;
+              font-size: 20px;
+            }
+
+            .newDiv {
+              display: grid !important;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: 0.2fr 3fr;
+
+              .thankYou {
+                grid-column-start: 1;
+                grid-column-end: 3;
+              }
+
+              .userReward {
+                grid-row-start: 2;
+                grid-column-start: 1;
+                grid-column-end: 3;
+
+                .totalHbarText {
+                  font-size: 15px;
+                  margin: 0;
+                }
+
+                .totalHbarText2 {
+                  font-size: 15px;
+                  margin: 0;
+                }
+              }
+            }
+
+            .submitTip {
+              background-color: lightgreen;
+              height: 8vh;
+              width: 8vw;
+
+              &:hover {
+                background-color: rgb(104, 228, 104);
+              }
+            }
+
+            .tipOption {
+              margin: 2vh;
+            }
+
+            .getBalance {
+              background-color: lightgreen;
+              height: 4vh;
+              width: 10vw;
+
+              &:hover {
+                background-color: rgb(104, 228, 104);
+              }
+            }
+          }
         }
+      }
     }
+  }
 }
